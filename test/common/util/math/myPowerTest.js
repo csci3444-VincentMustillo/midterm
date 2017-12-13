@@ -29,6 +29,11 @@ describe('myMath', function() {
             assert.equal(result, testSquareStringCorrect);
         });
 
+        it('myPower should return the type number', function() {
+            let result = myPower.toPower(testSquare);
+            assert.typeOf(result, 'number');
+        });
+
         it('myPower(' + testCube + ',' + testCubeExp + ') should return the cubed version of the number ' + testCube + '', function() {
             let result = myMath.myPower(testCube, testCubeExp);
             assert.equal(result, testCubeCorrect);
@@ -37,6 +42,11 @@ describe('myMath', function() {
         it('myPower("' + testCubeString + '", ' + testCubeExp + ') should convert the string version of a number to the number type. It will then return the cubed version of the string "' + testCubeString + '"', function() {
             let result = myMath.myPower(testCubeString, testCubeExp);
             assert.equal(result, testCubeStringCorrect);
+        });
+
+        it('myPower should return the type number', function() {
+            let result = myPower.toPower(testCube);
+            assert.typeOf(result, 'number');
         });
 
         it('myPower(' + testQuad + ', ' + testQuadExp + ') should return ' + testQuad + ' to the fourth power.', function() {

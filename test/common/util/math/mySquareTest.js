@@ -17,5 +17,10 @@ describe('mySquare', function() {
             let result = mySquare.toSquare(testSquareString);
             assert.equal(result, testSquareStringCorrect);
         });
+
+        it('toSquare should return the type number', function() {
+            let result = mySquare.toSquare(testSquare);
+            assert.typeOf(result, 'number');
+        });
     });
 });

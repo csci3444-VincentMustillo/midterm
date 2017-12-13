@@ -7,10 +7,35 @@
         "test": "test"
     },
     "scripts": {
+        "start": "nodemon ./src/main_webServer.js",
+        "test": "npm run testAndCoverage",
+
         "testOnly": "npm run test_mocha_all",
-        "testAndCoverageAndReport": "npm run testAndCoverage && npm run openCoverageReport",
-        "start_express_ejs_bootstrap_with_nodemon": "nodemon express_ejs_bootstrap/server.js",
-        "test": "mocha"
+
+        "test_mocha_testDirOnly": "mocha",
+        "test_mocha_all": "mocha --recursive",
+        "test_mocha_all_TDD_asWellAs_BDD": "mocha --recursive --ui tdd",
+
+        "testAndCoverage": "npm run testAndCoverage_via_nyc",
+
+        "testAndCoverage_via_nyc": "nyc mocha --recursive",
+        "testAndCoverage_via_nyc_TDD_asWellAs_BDD": "nyc mocha --recursive --ui tdd",
+
+        "testAndCoverage_via_istanbul": "istanbul cover ./node_modules/mocha/bin/_mocha -- --recursive",
+        "testCoverage_via_istanbul_2": "./node_modules/.bin/istanbul cover ./node_modules/mocha/bin/_mocha -- --recursive",
+        "testAndCoverage_via_istanbul_DONTwork": "istanbul cover _mocha",
+
+        "checkCoverage": "npm run checkCoverage_perFile_nyc",
+        "checkCoverage_overAll_nyc_defaults": "nyc check-coverage || true",
+        "checkCoverage_overAll_nyc": "nyc check-coverage --lines 90 --functions 95 --branches 85 || true",
+        "checkCoverage_perFile_nyc": "nyc check-coverage --lines 90 --functions 95 --branches 85 --per-file || true",
+        "checkCoverage_perFile_istanbul": "istanbul check-coverage --lines 90 --functions 95 --branches 85 --per-file || true",
+
+        "openCoverageReport": "npm run openCoverageReport_inBrowser",
+        "openCoverageReport_inShell_via_nyc": "nyc report",
+        "openCoverageReport_inBrowser": "opn coverage/lcov-report/index.html",
+
+        "testAndCoverageAndReport": "npm run testAndCoverage && npm run openCoverageReport"
     },
     "keywords": [],
     "author": "",

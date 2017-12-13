@@ -3,7 +3,7 @@ module.exports = {
         var squared;
         if (typeof num === "number") {
             squared = num * num;
-        } else if (typeof num === "string") {
+        } else {
             squared = parseInt(num);
             squared = squared * squared;
         }

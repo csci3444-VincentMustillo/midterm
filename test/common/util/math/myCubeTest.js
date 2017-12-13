@@ -17,5 +17,10 @@ describe('myCube', function() {
             let result = myCube.toCube(testCubeString);
             assert.equal(result, testCubeStringCorrect);
         });
+
+        it('myCube should return the type number', function() {
+            let result = myCube.toCube(testCube);
+            assert.typeOf(result, 'number');
+        });
     });
 });
