@@ -1,0 +1,29 @@
+{
+    "name": "exam_section_2",
+    "version": "1.0.0",
+    "description": "",
+    "main": "index.js",
+    "directories": {
+        "test": "test"
+    },
+    "scripts": {
+        "testOnly": "npm run test_mocha_all",
+        "testAndCoverageAndReport": "npm run testAndCoverage && npm run openCoverageReport",
+        "start_express_ejs_bootstrap_with_nodemon": "nodemon express_ejs_bootstrap/server.js",
+        "test": "mocha"
+    },
+    "keywords": [],
+    "author": "",
+    "license": "ISC",
+    "dependencies": {
+        "ejs": "^2.5.7",
+        "express": "^4.16.2"
+    },
+    "devDependencies": {
+        "chai": "^4.1.2",
+        "istanbul": "^0.4.5",
+        "mocha": "^4.0.1",
+        "nodemon": "^1.12.1",
+        "nyc": "^11.3.0"
+    }
+}
