@@ -11,11 +11,6 @@ const testCubeExp = 3;
 const testCubeCorrect = 8;
 const testCubeString = "3";
 const testCubeStringCorrect = 27;
-const testQuad = 3;
-const testQuadExp = 4;
-const testQuadCorrect = 81;
-const testQuadString = "2";
-const testQuadStringCorrect = 16;
 
 describe('myMath', function() {
     describe('myPower', function() {
@@ -30,7 +25,7 @@ describe('myMath', function() {
         });
 
         it('myPower should return the type number', function() {
-            let result = myPower.toPower(testSquare);
+            let result = myMath.myPower(testSquare, testSquareExp);
             assert.typeOf(result, 'number');
         });
 
@@ -45,18 +40,8 @@ describe('myMath', function() {
         });
 
         it('myPower should return the type number', function() {
-            let result = myPower.toPower(testCube);
+            let result = myMath.myPower(testCube, testCubeExp);
             assert.typeOf(result, 'number');
-        });
-
-        it('myPower(' + testQuad + ', ' + testQuadExp + ') should return ' + testQuad + ' to the fourth power.', function() {
-            let result = myMath.myPower(testQuad, testQuadExp);
-            assert.equal(result, testQuadCorrect);
-        });
-
-        it('myPower(' + testQuadString + ', ' + testQuadExp + ') should convert the string version of a number to the number type. It will then return the fourth power of the number ' + testQuadString, function() {
-            let result = myMath.myPower(testQuadString, testQuadExp);
-            assert.equal(result, testQuadStringCorrect);
         });
     });
 });
